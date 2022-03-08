@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "3e9p42GcR5fePF6KCnuFyHSoQqbjgOEtXpachjxk0m4zXceGWQnvVvzchxMSGNZT0EQ6kwtqDy14S1Zr2533jA==",
+  "dgSpecHash": "d0EHXM9mfdeFhbi4+dx6H1dNdbcc3IJvUNF5B81hCiHu+YjoBIxIW0LY0GY9oBw4FvPa9VZ/uBeBRK3KMKe46w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Esmarlyn\\Desktop\\c#\\agenda\\agenda\\agenda.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Esmarlyn\\Desktop\\Proyectos\\Agenda-Pro\\agenda\\agenda.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Esmarlyn\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.14\\microsoft.netcore.app.host.win-x64.5.0.14.nupkg.sha512",
+    "C:\\Users\\Esmarlyn\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Esmarlyn\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Esmarlyn\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

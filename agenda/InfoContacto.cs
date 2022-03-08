@@ -12,9 +12,11 @@ namespace agenda
 {
     public partial class infoContacto : Form
     {
+        private Logistica _logistica;
         public infoContacto()
         {
             InitializeComponent();
+            _logistica = new Logistica();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -25,7 +27,10 @@ namespace agenda
         private void btnSave_Click(object sender, EventArgs e)
         {
             Contacto contacto = new Contacto();
-            conta
+            contacto.nombre = txtNombre.Text;
+            contacto.apellido = txtApellido.Text;
+            contacto.telefono = txtTelefono.Text;
+            contacto.dirreccion = txtDireccion.Text;
         }
     }
 }
