@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace agenda
 {
+
     public class Logistica
     {
         private Acceso _acceso;
@@ -19,11 +20,13 @@ namespace agenda
         {
             if (contacto.Id == 0)
             {
-                //_acceso.InsertarContacto
+                _acceso.insertar(contacto);
             }
-            
-            else
-               // _acceso.ActualizaContacto
+
+            //else
+            // _acceso.ActualizaContacto
+
+            return contacto;
         }
     }
 }

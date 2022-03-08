@@ -29,22 +29,13 @@ namespace agenda
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridContacts = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAad = new System.Windows.Forms.Button();
+            this.gridContacts = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.gridContacts)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gridContacts
-            // 
-            this.gridContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridContacts.Location = new System.Drawing.Point(12, 121);
-            this.gridContacts.Name = "gridContacts";
-            this.gridContacts.RowTemplate.Height = 25;
-            this.gridContacts.Size = new System.Drawing.Size(776, 150);
-            this.gridContacts.TabIndex = 0;
             // 
             // label1
             // 
@@ -85,16 +76,25 @@ namespace agenda
             this.btnAad.UseVisualStyleBackColor = true;
             this.btnAad.Click += new System.EventHandler(this.btnAad_Click);
             // 
+            // gridContacts
+            // 
+            this.gridContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridContacts.Location = new System.Drawing.Point(12, 221);
+            this.gridContacts.Name = "gridContacts";
+            this.gridContacts.RowTemplate.Height = 25;
+            this.gridContacts.Size = new System.Drawing.Size(698, 194);
+            this.gridContacts.TabIndex = 5;
+            // 
             // contactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.gridContacts);
             this.Controls.Add(this.btnAad);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.gridContacts);
             this.Name = "contactos";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.gridContacts)).EndInit();
@@ -104,12 +104,11 @@ namespace agenda
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView gridContacts;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnAad;
+        private System.Windows.Forms.DataGridView gridContacts;
     }
 }
 

@@ -26,11 +26,19 @@ namespace agenda
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            guardaContacto();
+        }
+
+
+        private void guardaContacto()
+        {
             Contacto contacto = new Contacto();
             contacto.nombre = txtNombre.Text;
             contacto.apellido = txtApellido.Text;
             contacto.telefono = txtTelefono.Text;
             contacto.dirreccion = txtDireccion.Text;
+
+            _logistica.SalvaContactos(contacto);
         }
     }
 }
