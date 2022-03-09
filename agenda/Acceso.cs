@@ -92,6 +92,7 @@ namespace agenda
             List<Contacto> contactos = new List<Contacto>();
             try
             {
+
                 conn.Open();
                 string query = @"SELECT Id, Nombre, Apellido, Telefono, Direccion
                                   FROM ConTactos";
