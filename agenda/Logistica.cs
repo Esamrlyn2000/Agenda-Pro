@@ -23,10 +23,15 @@ namespace agenda
                 _acceso.insertar(contacto);
             }
 
-            //else
-            // _acceso.ActualizaContacto
+            else
+                _acceso.ActualizaContacto(contacto);
 
             return contacto;
+        }
+
+        public List<Contacto> GetContactos()
+        {
+           return _acceso.GetContactos();
         }
     }
 }

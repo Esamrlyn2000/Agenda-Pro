@@ -33,12 +33,12 @@ namespace agenda
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -55,6 +55,7 @@ namespace agenda
             // 
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNombre.Location = new System.Drawing.Point(111, 26);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(198, 33);
             this.txtNombre.TabIndex = 1;
@@ -63,6 +64,7 @@ namespace agenda
             // 
             this.txtApellido.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtApellido.Location = new System.Drawing.Point(110, 77);
+            this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(199, 33);
             this.txtApellido.TabIndex = 3;
@@ -76,14 +78,6 @@ namespace agenda
             this.label2.Size = new System.Drawing.Size(82, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Apellido";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTelefono.Location = new System.Drawing.Point(111, 128);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(198, 33);
-            this.txtTelefono.TabIndex = 5;
             // 
             // label3
             // 
@@ -99,6 +93,7 @@ namespace agenda
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDireccion.Location = new System.Drawing.Point(110, 184);
+            this.txtDireccion.MaxLength = 100;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(199, 33);
             this.txtDireccion.TabIndex = 7;
@@ -135,16 +130,26 @@ namespace agenda
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTelefono.Location = new System.Drawing.Point(108, 128);
+            this.txtTelefono.Mask = "(999)000-0000";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(201, 32);
+            this.txtTelefono.TabIndex = 10;
+            this.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // infoContacto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 283);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.label2);
@@ -163,11 +168,11 @@ namespace agenda
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.MaskedTextBox txtTelefono;
     }
 }

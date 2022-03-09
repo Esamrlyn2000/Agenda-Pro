@@ -29,12 +29,21 @@ namespace agenda
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAad = new System.Windows.Forms.Button();
-            this.gridContacts = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.gridContacts)).BeginInit();
+            this.gridContactos = new System.Windows.Forms.DataGridView();
+            this.contactoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dirreccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContactos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -76,28 +85,81 @@ namespace agenda
             this.btnAad.UseVisualStyleBackColor = true;
             this.btnAad.Click += new System.EventHandler(this.btnAad_Click);
             // 
-            // gridContacts
+            // gridContactos
             // 
-            this.gridContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridContacts.Location = new System.Drawing.Point(12, 221);
-            this.gridContacts.Name = "gridContacts";
-            this.gridContacts.RowTemplate.Height = 25;
-            this.gridContacts.Size = new System.Drawing.Size(698, 194);
-            this.gridContacts.TabIndex = 5;
+            this.gridContactos.AutoGenerateColumns = false;
+            this.gridContactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridContactos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.apellidoDataGridViewTextBoxColumn,
+            this.telefonoDataGridViewTextBoxColumn,
+            this.dirreccionDataGridViewTextBoxColumn,
+            this.Edit});
+            this.gridContactos.DataSource = this.contactoBindingSource;
+            this.gridContactos.Location = new System.Drawing.Point(12, 96);
+            this.gridContactos.Name = "gridContactos";
+            this.gridContactos.RowTemplate.Height = 25;
+            this.gridContactos.Size = new System.Drawing.Size(759, 318);
+            this.gridContactos.TabIndex = 5;
+            this.gridContactos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // contactoBindingSource
+            // 
+            this.contactoBindingSource.DataSource = typeof(agenda.Contacto);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "telefono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            // 
+            // dirreccionDataGridViewTextBoxColumn
+            // 
+            this.dirreccionDataGridViewTextBoxColumn.DataPropertyName = "dirreccion";
+            this.dirreccionDataGridViewTextBoxColumn.HeaderText = "dirreccion";
+            this.dirreccionDataGridViewTextBoxColumn.Name = "dirreccionDataGridViewTextBoxColumn";
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForLinkValue = true;
             // 
             // contactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.gridContacts);
+            this.Controls.Add(this.gridContactos);
             this.Controls.Add(this.btnAad);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
             this.Name = "contactos";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.gridContacts)).EndInit();
+            this.Load += new System.EventHandler(this.contactos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridContactos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contactoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,7 +170,14 @@ namespace agenda
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnAad;
-        private System.Windows.Forms.DataGridView gridContacts;
+        private System.Windows.Forms.DataGridView gridContactos;
+        private System.Windows.Forms.BindingSource contactoBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dirreccionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn Edit;
     }
 }
 

@@ -33,7 +33,6 @@ C:\Users\Esmarlyn\Desktop\c#\Agenda-Pro\agenda\bin\Debug\net5.0-windows\agenda.d
 C:\Users\Esmarlyn\Desktop\c#\Agenda-Pro\agenda\bin\Debug\net5.0-windows\agenda.runtimeconfig.json
 C:\Users\Esmarlyn\Desktop\c#\Agenda-Pro\agenda\bin\Debug\net5.0-windows\agenda.runtimeconfig.dev.json
 C:\Users\Esmarlyn\Desktop\c#\Agenda-Pro\agenda\bin\Debug\net5.0-windows\agenda.dll
-C:\Users\Esmarlyn\Desktop\c#\Agenda-Pro\agenda\bin\Debug\net5.0-windows\ref\agenda.dll
 C:\Users\Esmarlyn\Desktop\c#\Agenda-Pro\agenda\bin\Debug\net5.0-windows\agenda.pdb
 C:\Users\Esmarlyn\Desktop\c#\Agenda-Pro\agenda\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
 C:\Users\Esmarlyn\Desktop\c#\Agenda-Pro\agenda\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
@@ -43,3 +42,4 @@ C:\Users\Esmarlyn\Desktop\c#\Agenda-Pro\agenda\bin\Debug\net5.0-windows\runtimes
 C:\Users\Esmarlyn\Desktop\c#\Agenda-Pro\agenda\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Esmarlyn\Desktop\c#\Agenda-Pro\agenda\obj\Debug\net5.0-windows\agenda.csproj.CopyComplete
 C:\Users\Esmarlyn\Desktop\c#\Agenda-Pro\agenda\obj\Debug\net5.0-windows\agenda.genruntimeconfig.cache
+C:\Users\Esmarlyn\Desktop\c#\Agenda-Pro\agenda\obj\Debug\net5.0-windows\refint\agenda.dll

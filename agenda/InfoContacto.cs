@@ -13,6 +13,7 @@ namespace agenda
     public partial class infoContacto : Form
     {
         private Logistica _logistica;
+        private Contacto _contacto;
         public infoContacto()
         {
             InitializeComponent();
@@ -27,10 +28,18 @@ namespace agenda
         private void btnSave_Click(object sender, EventArgs e)
         {
             guardaContacto();
+            this.Close();
+    
+            ((contactos)this.Owner).PopulateContacts();
         }
 
 
         private void guardaContacto()
+        {
+            SaveContact();
+        }
+
+        private void SaveContact()
         {
             Contacto contacto = new Contacto();
             contacto.nombre = txtNombre.Text;
@@ -38,7 +47,33 @@ namespace agenda
             contacto.telefono = txtTelefono.Text;
             contacto.dirreccion = txtDireccion.Text;
 
+            contacto.Id = _contacto != null ? _contacto.Id : 0;
+
             _logistica.SalvaContactos(contacto);
         }
+
+        public void LoadContac(Contacto contacto)
+        {
+            _contacto = contacto;
+            if (contacto != null)
+            {
+                ClearForm();
+
+                txtNombre.Text = contacto.nombre;
+                txtApellido.Text = contacto.apellido;
+                txtTelefono.Text = contacto.telefono;   
+                txtDireccion.Text = contacto.dirreccion;
+
+            }
+        }
+
+        private void ClearForm()
+        {
+            txtNombre.Text = string.Empty;
+            txtApellido.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+        }
+
     }
 }
