@@ -29,9 +29,14 @@ namespace agenda
             return contacto;
         }
 
-        public List<Contacto> GetContactos()
+        public List<Contacto> GetContactos(string buscaTexto = null)
         {
-           return _acceso.GetContactos();
+           return _acceso.GetContactos(buscaTexto);
+        }
+
+        public void EliminaContacto(int id)
+        {
+            _acceso.EliminaContacto(id);
         }
     }
 }

@@ -85,19 +85,45 @@ namespace agenda
             finally { conn.Close(); }
         }
 
-
-
-        public List<Contacto> GetContactos()
+        public void EliminaContacto(int id)
         {
+            try
+            {
+                conn.Open();
+                string query = @"DELETE FROM Contactos WHERE Id = @Id ";
+
+                SqlCommand command = new SqlCommand(query,conn);
+                command.Parameters.Add(new SqlParameter("@Id", id));
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { conn.Close(); }
+        }
+
+        public List<Contacto> GetContactos(string buscar = null )
+        {
+            string query = "";
             List<Contacto> contactos = new List<Contacto>();
             try
             {
-
                 conn.Open();
-                string query = @"SELECT Id, Nombre, Apellido, Telefono, Direccion
-                                  FROM ConTactos";
+                query = @"SELECT Id, Nombre, Apellido, Telefono, Direccion
+                                  FROM ConTactos ";
 
-                SqlCommand command = new SqlCommand(query, conn);
+                SqlCommand command = new SqlCommand();
+
+                if (!string.IsNullOrEmpty(buscar))
+                {
+                    query += "where nombre  like @buscar  or apellido like @buscar or telefono like @buscar or direccion like @buscar";
+                    command.Parameters.Add(new SqlParameter("@buscar", $"%{buscar}%"));
+                }
+                command.CommandText = query;
+                command.Connection = conn;
 
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -113,10 +139,10 @@ namespace agenda
                     });
                 }
             } 
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
 
             finally { conn.Close(); }

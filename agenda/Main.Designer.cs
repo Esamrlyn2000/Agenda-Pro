@@ -35,13 +35,14 @@ namespace agenda
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAad = new System.Windows.Forms.Button();
             this.gridContactos = new System.Windows.Forms.DataGridView();
-            this.contactoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dirreccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.contactoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridContactos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +74,7 @@ namespace agenda
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnAad
             // 
@@ -95,7 +97,8 @@ namespace agenda
             this.apellidoDataGridViewTextBoxColumn,
             this.telefonoDataGridViewTextBoxColumn,
             this.dirreccionDataGridViewTextBoxColumn,
-            this.Edit});
+            this.Edit,
+            this.Eliminar});
             this.gridContactos.DataSource = this.contactoBindingSource;
             this.gridContactos.Location = new System.Drawing.Point(12, 96);
             this.gridContactos.Name = "gridContactos";
@@ -103,10 +106,6 @@ namespace agenda
             this.gridContactos.Size = new System.Drawing.Size(759, 318);
             this.gridContactos.TabIndex = 5;
             this.gridContactos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // contactoBindingSource
-            // 
-            this.contactoBindingSource.DataSource = typeof(agenda.Contacto);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -145,6 +144,18 @@ namespace agenda
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForLinkValue = true;
             // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.UseColumnTextForLinkValue = true;
+            // 
+            // contactoBindingSource
+            // 
+            this.contactoBindingSource.DataSource = typeof(agenda.Contacto);
+            // 
             // contactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -178,6 +189,7 @@ namespace agenda
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dirreccionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewLinkColumn Edit;
+        private System.Windows.Forms.DataGridViewLinkColumn Eliminar;
     }
 }
 

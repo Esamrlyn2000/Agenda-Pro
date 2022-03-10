@@ -47,6 +47,16 @@ namespace agenda
                 });
                 infoContacto.ShowDialog(this);
             }
+            else if(cell.Value.ToString() == "Eliminar")
+            {
+                EliminaContacto(int.Parse((gridContactos.Rows[e.RowIndex].Cells[0]).Value.ToString()));
+                PopulateContacts();
+            }
+        }
+
+        private void EliminaContacto(int id)
+        {
+            _logistica.EliminaContacto(id);
         }
 
         private void contactos_Load(object sender, EventArgs e)
@@ -54,10 +64,16 @@ namespace agenda
             PopulateContacts();
         }
 
-        public void PopulateContacts()
+        public void PopulateContacts(string buscaTexto = null)
         {
-            List<Contacto> contactos = _logistica.GetContactos();
+            List<Contacto> contactos = _logistica.GetContactos(buscaTexto);
             gridContactos.DataSource = contactos;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            PopulateContacts(txtBuscar.Text);
+            txtBuscar.Text = string.Empty;
         }
     }
 }
